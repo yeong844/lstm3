@@ -29,8 +29,8 @@ def load_model_and_tokenizer():
         
         model = load_model("sentiment_lstm_v2.keras")
 
-        with open('tokenizer_v2.pkl', 'rb') as f:
-            tokenizer = pickle.load(f)
+         # Load tokenizer using joblib (not pickle)
+        tokenizer = joblib.load('tokenizer_v2.pkl')
 
         return model, tokenizer
     except Exception as e:
