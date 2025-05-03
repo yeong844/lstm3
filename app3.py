@@ -24,12 +24,12 @@ except Exception as e:
 @st.cache_resource
 def load_model_and_tokenizer():
     try:
-        if not os.path.exists("sentiment_LSTM_V2.keras") or not os.path.exists("tokenizer_V2.pkl"):
+        if not os.path.exists("sentiment_lstm_v2.keras") or not os.path.exists("tokenizer_v2.pkl"):
             raise FileNotFoundError("Model or Tokenizer not found. Please upload the required files.")
         
-        model = load_model("sentiment_LSTM_V2.keras")
+        model = load_model("sentiment_lstm_v2.keras")
 
-        with open('tokenizer_V2.pkl', 'rb') as f:
+        with open('tokenizer_v2.pkl', 'rb') as f:
             tokenizer = pickle.load(f)
 
         return model, tokenizer
