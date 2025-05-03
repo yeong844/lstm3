@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import joblib
+import joblib  # Used for loading the tokenizer
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import os
@@ -29,7 +29,7 @@ def load_model_and_tokenizer():
         
         model = load_model("sentiment_lstm_v2.keras")
 
-         # Load tokenizer using joblib (not pickle)
+        # Load tokenizer using joblib (not pickle)
         tokenizer = joblib.load('tokenizer_v2.pkl')
 
         return model, tokenizer
